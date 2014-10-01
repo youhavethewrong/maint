@@ -8,3 +8,4 @@ target/*
 
 *.db
 /target/
+dependency-reduced-pom.xml
