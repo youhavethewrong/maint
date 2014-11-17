@@ -1,0 +1,5 @@
+maintDb:
+  driverClass: com.mysql.jdbc.Driver
+  user: maint
+  password:
+  url: jdbc:mysql://bastion:3306/maint

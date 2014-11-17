@@ -1,8 +1,9 @@
 package info.youhavethewrong.maint.resource;
 
-import info.youhavethewrong.maint.model.Maintenance;
+import info.youhavethewrong.maint.model.*;
 import info.youhavethewrong.maint.storage.MaintenanceStorage;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.ws.rs.*;
@@ -18,6 +19,7 @@ public class MaintResource {
 		this.storage = storage;
 	}
 
+	@Deprecated
 	@GET
 	public List<Maintenance> getMaintenancePerformed() {
 		return storage.getAllMaintenance();
@@ -25,8 +27,16 @@ public class MaintResource {
 
 	@GET
 	@Path("/{id: \\d+}")
-	public Maintenance getMaintenanceById(@PathParam("id") Integer id) {
+	public Maintenance getMaintenanceById(@PathParam("id") BigInteger id) {
 		return storage.getMaintenance(id);
+	}
+
+	@GET
+	@Path("/user/{userid}")
+	public List<Maintenance> getMaintenancePerformedByUser(@PathParam("userid") BigInteger userid) {
+		User user = new User();
+		user.setId(userid);
+		return storage.getAllMaintenanceByUser(user);
 	}
 
 	@POST
