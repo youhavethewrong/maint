@@ -26,7 +26,7 @@ public class MySqlMaintenanceStorage implements MaintenanceStorage {
 		try {
 			List<Maintenance> allWork = []
 			Sql sql = new Sql(ds)
-			sql.rows("select id,durableGood,date,notes from log").each { result ->
+			sql.rows("select id,durableGood,date,notes from log order by date desc").each { result ->
 				allWork.add(new Maintenance(id: result.id, durableGood: result.durableGood, date: result.date, notes: result.notes))
 			}
 
