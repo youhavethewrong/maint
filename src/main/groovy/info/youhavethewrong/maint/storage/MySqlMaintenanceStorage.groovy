@@ -91,7 +91,7 @@ public class MySqlMaintenanceStorage implements MaintenanceStorage {
 			if(result != null ) {
 				Maintenance stored = new Maintenance()
 				stored.id = result.id
-				stored.userid = maint.userid
+				stored.userid = result.userid
 				stored.durableGood = result.durableGood
 				stored.date = result.date
 				stored.notes = result.notes
