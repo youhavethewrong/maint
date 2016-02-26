@@ -7,7 +7,11 @@
   <artifactId>maint</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+
   <name>maint</name>
+  <description>
+    A webservice for persisting information about the maintenance of durable goods.
+  </description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
